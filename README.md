@@ -5,9 +5,9 @@
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-gitlab.svg)](https://github.com/alvistack/docker-gitlab/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/gitlab.svg)](https://hub.docker.com/r/alvistack/gitlab/)
 
-GitLab Software unlocks the power of agile by giving your team the tools to easily create & estimate stories, build a sprint backlog, identify team commitments & velocity, visualize team activity, and report on your team's progress.
+GitLab is a complete DevOps platform, delivered as a single application. This makes GitLab unique and makes Concurrent DevOps possible, unlocking your organization from the constraints of a pieced together toolchain. Join us for a live Q\&A to learn how GitLab can give you unmatched visibility and higher levels of efficiency in a single application across the DevOps lifecycle.
 
-Learn more about GitLab: <https://www.atlassian.com/software/gitlab>
+Learn more about GitLab: <https://about.gitlab.com/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
