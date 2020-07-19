@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -o xtrace
 
 function sigterm_handler() {
     echo "SIGTERM signal received, try to gracefully shutdown all services..."
