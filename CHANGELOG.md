@@ -1,6 +1,6 @@
 # Docker Image Packaging for GitLab
 
-## 13.1.4-XalvistackY - TBC
+## 13.2.2-XalvistackY - TBC
 
 ### Major Changes
 
