@@ -11,7 +11,7 @@ Learn more about GitLab: <https://about.gitlab.com/>
 
 ## Supported Tags and Respective `Dockerfile` Links
 
-  - [`13.2`, `latest`](https://github.com/alvistack/docker-gitlab/blob/master/molecule/13.2/Dockerfile.j2)
+  - [`13.3`, `latest`](https://github.com/alvistack/docker-gitlab/blob/master/molecule/13.3/Dockerfile.j2)
 
 ## Overview
 
