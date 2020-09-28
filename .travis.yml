@@ -11,6 +11,7 @@ services:
 
 env:
   jobs:
+    - MOLECULE_SCENARIO_NAME="13.4"
     - MOLECULE_SCENARIO_NAME="13.3"
 
 before_install:
