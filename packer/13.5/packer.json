@@ -1,0 +1,79 @@
+{
+    "builders": [
+        {
+            "type": "docker",
+            "image": "ubuntu:20.04",
+            "commit": true,
+            "changes": [
+                "ENV LANG en_US.UTF-8",
+                "ENV LC_ALL en_US.UTF-8",
+                "ENV SHELL /bin/bash",
+                "ENV TZ UTC",
+                "VOLUME /var/opt/gitlab",
+                "WORKDIR /var/opt/gitlab",
+                "EXPOSE 22",
+                "EXPOSE 80",
+                "EXPOSE 443",
+                "ENTRYPOINT [\"catatonit\", \"-g\", \"--\", \"docker-entrypoint.sh\"]",
+                "CMD [\"start-gitlab.sh\"]"
+            ]
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "set -ex",
+                "groupadd -r -g 999 gitlab-www",
+                "groupadd -r -g 998 git",
+                "groupadd -r -g 997 gitlab-redis",
+                "groupadd -r -g 996 gitlab-psql",
+                "groupadd -r -g 994 mattermost",
+                "groupadd -r -g 993 registry",
+                "groupadd -r -g 992 gitlab-prometheus",
+                "groupadd -r -g 991 gitlab-consul",
+                "useradd -r -M -u 999 -g 999 -d /var/opt/gitlab/nginx -s /bin/false gitlab-www",
+                "useradd -r -M -u 998 -g 998 -d /var/opt/gitlab -s /bin/sh git",
+                "useradd -r -M -u 997 -g 997 -d /var/opt/gitlab/redis -s /bin/false gitlab-redis",
+                "useradd -r -M -u 996 -g 996 -d /var/opt/gitlab/postgresql -s /bin/sh gitlab-psql",
+                "useradd -r -M -u 994 -g 994 -d /var/opt/gitlab/mattermost -s /bin/sh mattermost",
+                "useradd -r -M -u 993 -g 993 -d /var/opt/gitlab/registry -s /bin/sh registry",
+                "useradd -r -M -u 992 -g 992 -d /var/opt/gitlab/prometheus -s /bin/sh gitlab-prometheus",
+                "useradd -r -M -u 991 -g 991 -d /var/opt/gitlab/consul -s /bin/sh gitlab-consul"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "set -ex",
+                "apt-get update",
+                "DEBIAN_FRONTEND=noninteractive apt-get install -y language-pack-en locales",
+                "localedef -i en_US -c -f UTF-8 en_US.UTF-8",
+                "rm -rf /var/lib/apt/lists/*"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "set -ex",
+                "apt-get update",
+                "DEBIAN_FRONTEND=noninteractive apt-get install -y systemd",
+                "ln -fs /lib/systemd/systemd /usr/sbin/init",
+                "rm -f /etc/systemd/system/*.wants/*",
+                "rm -f /lib/systemd/system/basic.target.wants/*",
+                "rm -f /lib/systemd/system/local-fs.target.wants/*",
+                "rm -f /lib/systemd/system/multi-user.target.wants/*",
+                "rm -f /lib/systemd/system/sockets.target.wants/*initctl*",
+                "rm -f /lib/systemd/system/sockets.target.wants/*udev*",
+                "rm -f /lib/systemd/system/sysinit.target.wants/systemd-tmpfiles-setup.service",
+                "rm -rf /var/lib/apt/lists/*"
+            ]
+        },
+        {
+            "type": "ansible",
+            "playbook_file": "./packer.yml",
+            "inventory_directory": "./",
+            "galaxy_file": "./ansible-galaxy-requirements.yml"
+        }
+    ]
+}
