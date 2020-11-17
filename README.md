@@ -35,7 +35,6 @@ Start GitLab CE Server:
     # Run as detach
     docker run \
         -itd \
-        --privileged \
         --name gitlab-ce \
         --publish 22:22 \
         --publish 80:80 \
