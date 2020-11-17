@@ -98,7 +98,7 @@
         name: gosu
 
     - include_role:
-        name: gitlab
+        name: gitlab_ce
 
     - name: prepare directories
       file:

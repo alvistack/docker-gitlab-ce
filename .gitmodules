@@ -2,9 +2,9 @@
 	path = roles/catatonit
 	url = https://github.com/alvistack/ansible-role-catatonit.git
 	branch = develop
-[submodule "roles/gitlab"]
-	path = roles/gitlab
-	url = https://github.com/alvistack/ansible-role-gitlab.git
+[submodule "roles/gitlab_ce"]
+	path = roles/gitlab_ce
+	url = https://github.com/alvistack/ansible-role-gitlab_ce.git
 	branch = develop
 [submodule "roles/gosu"]
 	path = roles/gosu

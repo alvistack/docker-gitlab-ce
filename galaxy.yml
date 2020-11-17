@@ -15,17 +15,17 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-gitlab
-description: Docker Image Packaging for GitLab
+name: docker-gitlab-ce
+description: Docker Image Packaging for GitLab CE
 
 version: VERSION
 readme: README.md
 license: Apache-2.0
 
-repository: https://github.com/alvistack/docker-gitlab
-documentation: https://github.com/alvistack/docker-gitlab
-homepage: https://github.com/alvistack/docker-gitlab
-issues: https://github.com/alvistack/docker-gitlab/issues
+repository: https://github.com/alvistack/docker-gitlab-ce
+documentation: https://github.com/alvistack/docker-gitlab-ce
+homepage: https://github.com/alvistack/docker-gitlab-ce
+issues: https://github.com/alvistack/docker-gitlab-ce/issues
 
 dependencies: {}
 tags:

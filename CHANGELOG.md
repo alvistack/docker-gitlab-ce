@@ -1,9 +1,10 @@
-# Docker Image Packaging for GitLab
+# Docker Image Packaging for GitLab CE
 
 ## 13.5.4-XalvistackY - TBC
 
 ### Major Changes
 
+  - Rename role as `ansible-role-gitlab_ce`
   - Revamp with Packer
 
 ## 13.4.3-4alvistack2 - 2020-10-14
