@@ -36,14 +36,15 @@ Start GitLab CE Server:
     docker run \
         -itd \
         --name gitlab-ce \
-        --publish 22:22 \
-        --publish 80:80 \
-        --publish 443:443 \
-        --env GITLAB_EXTERNAL_URL=http://localhost/ \
+        --publish 2222:22 \
+        --publish 8080:80 \
+        --publish 8443:443 \
+        --env GITLAB_EXTERNAL_URL=http://localhost:8080/ \
+        --volume /etc/gitlab:/etc/gitlab \
         --volume /var/opt/gitlab:/var/opt/gitlab \
         alvistack/gitlab-ce
 
-**Success**. GitLab CE is now available on <http://localhost>
+**Success**. GitLab CE is now available on <http://localhost:8080>
 
 ## Upgrade
 
