@@ -12,7 +12,7 @@ node_exporter['enable'] = false
 manage_accounts['enable'] = false
 
 # Get external_url from env.
-external_url = ENV["GITLAB_EXTERNAL_URL"].to_s
+external_url ENV["EXTERNAL_URL"].to_s
 
 # Explicitly disable init detection since we are running on a container.
 package['detect_init'] = false
