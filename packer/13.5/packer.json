@@ -6,6 +6,7 @@
         "ENV LC_ALL en_US.UTF-8",
         "ENV SHELL /bin/bash",
         "ENV TZ UTC",
+        "ENV EXTERNAL_URL http://localhost",
         "VOLUME /var/opt/gitlab",
         "WORKDIR /var/opt/gitlab",
         "EXPOSE 22",
