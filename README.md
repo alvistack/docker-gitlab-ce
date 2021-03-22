@@ -3,7 +3,7 @@
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-gitlab-ce/master)](https://gitlab.com/alvistack/docker-gitlab-ce/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/blob/master/LICENSE)
-[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/gitlab-ce-13.9.svg)](https://hub.docker.com/r/alvistack/gitlab-ce-13.9)
+[![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/gitlab-ce-13.10.svg)](https://hub.docker.com/r/alvistack/gitlab-ce-13.10)
 
 GitLab is a complete DevOps platform, delivered as a single application. This makes GitLab unique and makes Concurrent DevOps possible, unlocking your organization from the constraints of a pieced together toolchain. Join us for a live Q\&A to learn how GitLab can give you unmatched visibility and higher levels of efficiency in a single application across the DevOps lifecycle.
 
@@ -11,10 +11,10 @@ Learn more about GitLab: <https://about.gitlab.com/>
 
 ## Supported Tags and Respective Packer Template Links
 
+  - [`alvistack/gitlab-ce-13.10`](https://hub.docker.com/r/alvistack/gitlab-ce-13.10)
+      - [`packer/docker-13.10/packer.json`](https://github.com/alvistack/docker-gitlab-ce/blob/master/packer/docker-13.10/packer.json)
   - [`alvistack/gitlab-ce-13.9`](https://hub.docker.com/r/alvistack/gitlab-ce-13.9)
       - [`packer/docker-13.9/packer.json`](https://github.com/alvistack/docker-gitlab-ce/blob/master/packer/docker-13.9/packer.json)
-  - [`alvistack/gitlab-ce-13.8`](https://hub.docker.com/r/alvistack/gitlab-ce-13.8)
-      - [`packer/docker-13.8/packer.json`](https://github.com/alvistack/docker-gitlab-ce/blob/master/packer/docker-13.8/packer.json)
 
 ## Overview
 
@@ -49,7 +49,7 @@ Config GitLab CE Server (`/etc/gitlab/config.rb`):
 Start GitLab CE Server:
 
     # Pull latest image
-    docker pull alvistack/gitlab-ce-13.9
+    docker pull alvistack/gitlab-ce-13.10
     
     # Run as detach
     docker run \
@@ -60,7 +60,7 @@ Start GitLab CE Server:
         --publish 443:443 \
         --volume /etc/gitlab:/etc/gitlab \
         --volume /var/opt/gitlab:/var/opt/gitlab \
-        alvistack/gitlab-ce-13.9
+        alvistack/gitlab-ce-13.10
 
 **Success**. GitLab CE is now available on <http://localhost:80>
 
