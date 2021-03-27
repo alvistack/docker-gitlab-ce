@@ -59,6 +59,7 @@ Start GitLab CE Server:
         --publish 80:80 \
         --publish 443:443 \
         --volume /etc/gitlab:/etc/gitlab \
+        --volume /var/log/gitlab:/var/log/gitlab \
         --volume /var/opt/gitlab:/var/opt/gitlab \
         alvistack/gitlab-ce-13.10
 
