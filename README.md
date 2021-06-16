@@ -4,7 +4,9 @@
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/blob/master/LICENSE)
 [![Docker Pulls](https://img.shields.io/docker/pulls/alvistack/gitlab-ce-13.12.svg)](https://hub.docker.com/r/alvistack/gitlab-ce-13.12)
+
 GitLab is a complete DevOps platform, delivered as a single application. This makes GitLab unique and makes Concurrent DevOps possible, unlocking your organization from the constraints of a pieced together toolchain. Join us for a live Q\&A to learn how GitLab can give you unmatched visibility and higher levels of efficiency in a single application across the DevOps lifecycle.
+
 Learn more about GitLab: <https://about.gitlab.com/>
 
 ## Supported Tags and Respective Packer Template Links
@@ -17,6 +19,7 @@ Learn more about GitLab: <https://about.gitlab.com/>
 ## Overview
 
 This Docker container makes it easy to get an instance of GitLab CE up and running.
+
 Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with some minor hack:
 
   - Packaging by Packer Docker builder and Ansible provisioner in single layer
@@ -25,42 +28,55 @@ Based on [Official Ubuntu Docker Image](https://hub.docker.com/_/ubuntu/) with s
 ### Quick Start
 
 For the `VOLUME` directory that is used to store the repository data (amongst other things) we recommend mounting a host directory as a [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#/data-volumes), or via a named volume if using a docker version \>= 1.9.
+
 Config GitLab CE Server (`/etc/gitlab/config.rb`):
-\# GitLab CE external URL.
-external\_url "EXTERNAL\_URL"
-\# Prevent Postgres from trying to allocate 25% of total memory
-postgresql\['shared\_buffers'\] = '1MB'
-\# Disable Prometheus node\_exporter inside Docker.
-ode\_exporter\['enable'\] = false
-\# Manage accounts with docker.
-manage\_accounts\['enable'\] = false
-\# Explicitly disable init detection since we are running on a container.
-package\['detect\_init'\] = false
+
+    # GitLab CE external URL.
+    external_url "EXTERNAL_URL"
+    
+    # Prevent Postgres from trying to allocate 25% of total memory
+    postgresql['shared_buffers'] = '1MB'
+    
+    # Disable Prometheus node_exporter inside Docker.
+    node_exporter['enable'] = false
+    
+    # Manage accounts with docker.
+    manage_accounts['enable'] = false
+    
+    # Explicitly disable init detection since we are running on a container.
+    package['detect_init'] = false
+
 Start GitLab CE Server:
-\# Pull latest image
-docker pull alvistack/gitlab-ce-13.12
-\# Run as detach
-docker run   
-\-itd   
-\--name gitlab-ce   
-\--publish 22:22   
-\--publish 80:80   
-\--publish 443:443   
-\--volume /etc/gitlab:/etc/gitlab   
-\--volume /var/log/gitlab:/var/log/gitlab   
-\--volume /var/opt/gitlab:/var/opt/gitlab   
-alvistack/gitlab-ce-13.12
+
+    # Pull latest image
+    docker pull alvistack/gitlab-ce-13.12
+    
+    # Run as detach
+    docker run \
+        -itd \
+        --name gitlab-ce \
+        --publish 22:22 \
+        --publish 80:80 \
+        --publish 443:443 \
+        --volume /etc/gitlab:/etc/gitlab \
+        --volume /var/log/gitlab:/var/log/gitlab \
+        --volume /var/opt/gitlab:/var/opt/gitlab \
+        alvistack/gitlab-ce-13.12
+
 **Success**. GitLab CE is now available on <http://localhost:80>
 
 ## Upgrade
 
 To upgrade to a more recent version of GitLab CE Server you can simply stop the GitLab CE
 container and start a new one based on a more recent image:
-docker stop gitlab-ce
-docker rm gitlab-ce
-docker run ... (see above)
+
+    docker stop gitlab-ce
+    docker rm gitlab-ce
+    docker run ... (see above)
+
 As your data is stored in the data volume directory on the host, it will still
 be available after the upgrade.
+
 Note: Please make sure that you don't accidentally remove the gitlab-ce container and its volumes using the -v option.
 
 ## Backup
