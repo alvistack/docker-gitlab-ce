@@ -22,12 +22,9 @@
 
 ### Major Changes
 
-  - Bugfix [ansible-lint
-    `namespace`](https://github.com/ansible-community/ansible-lint/pull/1451)
-  - Bugfix [ansible-lint
-    `no-handler`](https://github.com/ansible-community/ansible-lint/pull/1402)
-  - Bugfix [ansible-lint
-    `unnamed-task`](https://github.com/ansible-community/ansible-lint/pull/1413)
+  - Bugfix [ansible-lint `namespace`](https://github.com/ansible-community/ansible-lint/pull/1451)
+  - Bugfix [ansible-lint `no-handler`](https://github.com/ansible-community/ansible-lint/pull/1402)
+  - Bugfix [ansible-lint `unnamed-task`](https://github.com/ansible-community/ansible-lint/pull/1413)
   - Change GIT tag as per Vagrant Box naming and versioning limitation
 
 ## 13.6.2-4alvistack1 - 2020-12-09
@@ -57,5 +54,4 @@
   - Ubuntu 20.04 based
   - Minimized `Dockerfile` for meta data definition
   - Provision by Ansible and Molecule Docker driver in single layer
-  - Handle `ENTRYPOINT` with
-    [catatonit](https://github.com/openSUSE/catatonit)
+  - Handle `ENTRYPOINT` with [catatonit](https://github.com/openSUSE/catatonit)
