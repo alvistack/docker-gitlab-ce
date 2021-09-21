@@ -1,5 +1,7 @@
 # Docker Image Packaging for GitLab CE
 
+<img src="/alvistack.svg" width="75" alt="AlviStack">
+
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-gitlab-ce/master)](https://gitlab.com/alvistack/docker-gitlab-ce/-/pipelines)
 [![GitHub release](https://img.shields.io/github/release/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/releases)
 [![GitHub license](https://img.shields.io/github/license/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/blob/master/LICENSE)
