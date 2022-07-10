@@ -1,6 +1,6 @@
 # Docker Image Packaging for GitLab CE
 
-<img src="/alvistack.svg" width="75" alt="AlviStack">
+<a href="https://alvistack.com" title="AlviStack" target="_blank"><img src="/alvistack.svg" height="75" alt="AlviStack"></a>
 
 [![GitLab pipeline status](https://img.shields.io/gitlab/pipeline/alvistack/docker-gitlab-ce/master)](https://gitlab.com/alvistack/docker-gitlab-ce/-/pipelines)
 [![GitHub tag](https://img.shields.io/github/tag/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/tags)
