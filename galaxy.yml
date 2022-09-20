@@ -15,7 +15,7 @@
 # limitations under the License.
 
 namespace: alvistack
-name: docker-gitlab-ce
+name: gitlab_ce
 description: Docker Image Packaging for GitLab CE
 
 version: 0.0.0
