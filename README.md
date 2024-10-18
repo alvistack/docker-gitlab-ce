@@ -9,7 +9,7 @@ tag](https://img.shields.io/github/tag/alvistack/docker-gitlab-ce.svg)](https://
 [![GitHub
 license](https://img.shields.io/github/license/alvistack/docker-gitlab-ce.svg)](https://github.com/alvistack/docker-gitlab-ce/blob/master/LICENSE)
 [![Docker
-Pulls](https://img.shields.io/docker/pulls/alvistack/gitlab-ce-17.4.svg)](https://hub.docker.com/r/alvistack/gitlab-ce-17.4)
+Pulls](https://img.shields.io/docker/pulls/alvistack/gitlab-ce-17.5.svg)](https://hub.docker.com/r/alvistack/gitlab-ce-17.5)
 
 GitLab is a complete DevOps platform, delivered as a single application.
 This makes GitLab unique and makes Concurrent DevOps possible, unlocking
@@ -22,10 +22,10 @@ Learn more about GitLab: <https://about.gitlab.com/>
 
 ## Supported Tags and Respective Packer Template Links
 
+- [`alvistack/gitlab-ce-17.5`](https://hub.docker.com/r/alvistack/gitlab-ce-17.5)
+  - [`packer/docker-17.5/packer.json`](https://github.com/alvistack/docker-gitlab-ce/blob/master/packer/docker-17.5/packer.json)
 - [`alvistack/gitlab-ce-17.4`](https://hub.docker.com/r/alvistack/gitlab-ce-17.4)
   - [`packer/docker-17.4/packer.json`](https://github.com/alvistack/docker-gitlab-ce/blob/master/packer/docker-17.4/packer.json)
-- [`alvistack/gitlab-ce-17.3`](https://hub.docker.com/r/alvistack/gitlab-ce-17.3)
-  - [`packer/docker-17.3/packer.json`](https://github.com/alvistack/docker-gitlab-ce/blob/master/packer/docker-17.3/packer.json)
 
 ## Overview
 
@@ -67,7 +67,7 @@ Config GitLab CE Server (`/etc/gitlab/config.rb`):
 Start GitLab CE Server:
 
     # Pull latest image
-    docker pull alvistack/gitlab-ce-17.4
+    docker pull alvistack/gitlab-ce-17.5
 
     # Run as detach
     docker run \
@@ -79,7 +79,7 @@ Start GitLab CE Server:
         --volume /etc/gitlab:/etc/gitlab \
         --volume /var/log/gitlab:/var/log/gitlab \
         --volume /var/opt/gitlab:/var/opt/gitlab \
-        alvistack/gitlab-ce-17.4
+        alvistack/gitlab-ce-17.5
 
 **Success**. GitLab CE is now available on <http://localhost:80>
 
