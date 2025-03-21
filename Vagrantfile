@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.provider :docker do |docker, override|
-    docker.image = "alvistack/gitlab-ce-17.9"
+    docker.image = "alvistack/gitlab-ce-17.10"
     docker.pull = true
 
     override.vm.synced_folder "./", "/vagrant"
